@@ -156,6 +156,5 @@ while {_timeMax > time} do {
 	_exposed = _x getVariable "Increment";
 	if(!isNil "_exposed") then {
 		_exposed set [_type, 0];
-		_x setVariable ["Increment", _exposed];
 	};
 }forEach _backUnits;
