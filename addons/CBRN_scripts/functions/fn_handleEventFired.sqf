@@ -5,9 +5,10 @@
 _ammo = param [0];
 _projectile = param [1];
 
-_gasType = getNumber (configFile >> "cfgAmmo" >> _ammo >> "CBRN_gasType");
-_isGas = !isNil "_gasType";
+_gasType = getNumber (configFile >> "cfgAmmo" >> _ammo >> "CBRN_isGas");
+_isGas = (_gasType == 1);
 if(_isGas) then {
+	_gasType = getNumber (configFile >> "cfgAmmo" >> _ammo >> "CBRN_gasType");
 	_selGas = CBRN_gasArray select _gasType;
 	[_projectile, _selGas] spawn {
 		_projectile = _this select 0;

@@ -5,7 +5,6 @@ class cfgWeapons
 	{
 		magazines[] += {"4Rnd_82mm_Mo_Chemical_Sarin", "4Rnd_82mm_Mo_Chemical_VX", "8Rnd_82mm_Mo_Chemical_Tear"};
 
-		//The price of not using CBA D:
 		class EventHandlers
 		{
 			fired		= 	"[_this select 4, _this select 6] call CBRN_fnc_handleEventFired";

@@ -9,7 +9,6 @@ class cfgMagazines
 		displayName = "Sarin Gas Shells";
 		ammo = "Sh_82mm_AMOS_Chem_Sarin";
 		count = 4;
-		//value=1
 	};
 
 	class 8Rnd_82mm_Mo_Chemical_Tear: 4Rnd_82mm_Mo_Chemical_Sarin
@@ -19,7 +18,6 @@ class cfgMagazines
 		displayName = "Tear Gas Shells";
 		ammo = "Sh_82mm_AMOS_Chem_Tear";
 		count = 8;
-		//value=1
 	};
 
 	class 4Rnd_82mm_Mo_Chemical_VX: 4Rnd_82mm_Mo_Chemical_Sarin
@@ -29,7 +27,6 @@ class cfgMagazines
 		displayName = "VX Gas Shells";
 		ammo = "Sh_82mm_AMOS_Chem_VX";
 		count = 4;
-		//value=1
 	};
 
 	class 6Rnd_155mm_Mo_smoke;

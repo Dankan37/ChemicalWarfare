@@ -19,7 +19,7 @@ for "_i" from 0 to _loops do {
 	
 	//If values are too small we add zero instead
 	//Since e^-x is decreasing, next values will be smaller
-	if(_value < 0.0005) then {
+	if(_value < 0.00005) then {
 		_value = 0;
 		_skipNext = true;
 	};

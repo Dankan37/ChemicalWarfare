@@ -4,17 +4,17 @@
 */
 
 //Sarin - lethal 
-gasSarin = [150, 800, 2, 60, true,0, 2];
+gasSarin = [250, 1800, 2, 60, true,0, 2];
 
 //Tear gas - very strong in limited areas
 gasTear = [10, 60, 4, 10, true, 1, 1];
 
 //VX - stronger than sarin, decays extremely slowly, ignores wind. 
 //Regarded as an area denial weapon
-gasVX = [150, 1200, 1, 90, false, 0, 2];
+gasVX = [250, 1800, 1, 90, false, 0, 2];
 
 //Asphyxiant 
-gasAsp = [150, 800, 2, 90, true, 2, 1];
+gasAsp = [250, 800, 2, 90, true, 2, 1];
 
 //Now
 CBRN_gasArray = [gasSarin, gasTear, gasVX];

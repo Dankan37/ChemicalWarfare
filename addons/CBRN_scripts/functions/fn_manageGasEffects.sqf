@@ -36,7 +36,8 @@ switch (_type) do {
 		_unit setDamage (_scaled + _currentDamage - _lastScaled);
 
 		//Fatigue
-		_unit setFatigue  _scaled*2;
+		_currentFatigue = getfatigue _unit;
+		_unit setFatigue  (_scaled + _currentFatigue - _lastScaled);
 
 		//Should be set unconcious
 		if(_scaled > _thres) then {
@@ -62,7 +63,8 @@ switch (_type) do {
 			[_val] call CBRN_fnc_blurScreen;
 		};
 		
-		_unit setFatigue  _scaled;
+		_currentFatigue = getfatigue _unit;
+		_unit setFatigue  (_scaled + _currentFatigue - _lastScaled);
 	};
 
 	//Asphyxiant - will add l8er

@@ -39,7 +39,7 @@ class cfgGlasses
 	class G_CBRN_M50: G_RegulatorMask_F
 	{
 		author = "Assaultboy"; //Obvious
-		displayname = "M50 Promask"; //What the player sees
+		displayname = "M50 Promasks"; //What the player sees
 		model = "\skn_nbc_units\models\skn_b_nbc_mask.p3d"; //A Path to the .p3d file
 		picture = "\CBRN_gear\data\items\maskM50.paa"; //This is what is shown in the inventory etc
 		identityTypes[] = {}; //This is used to add the mask to the random facewear selection pool. Leave it blank to keep it from being spawned rnadomly on people
@@ -56,7 +56,7 @@ class cfgGlasses
 	class G_CBRN_M50_Hood: G_CBRN_M50
 	{
 		author = "Assaultboy";
-		displayname = "M50 Promask w/ Hood";
+		displayname = "M50 Promask w/ Hoods";
 		model = "\skn_nbc_units\models\skn_b_nbc_mask_hood.p3d";
 		CBRN_protectionLevel = 1;
 	};

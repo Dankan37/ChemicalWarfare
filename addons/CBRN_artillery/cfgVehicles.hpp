@@ -32,22 +32,7 @@ class CfgVehicles {
             };
         };
     };
-/*
-    class MBT_02_base_F: LandVehicle {
-        class Turrets {
-            class MainTurret;
-        };
-    };
 
-    class MBT_02_arty_base_F : MBT_02_base_F {
-        class Turrets: Turrets { 
-            class MainTurret: MainTurret {
-                magazines[] += {"6Rnd_155mm_Mo_Chemical_Sarin","10Rnd_155mm_Mo_Chemical_Tear","6Rnd_155mm_Mo_Chemical_VX"};
-                weapons[] = {"CBRN_mortar_155mm_AMOS"};
-            };
-        };
-    };
-*/
     class MBT_01_mlrs_base_F: MBT_01_base_F {};
     class B_MBT_01_mlrs_base_F: MBT_01_mlrs_base_F {};
     class B_MBT_01_mlrs_F: B_MBT_01_mlrs_base_F {};
@@ -62,12 +47,12 @@ class CfgVehicles {
         };
     };
 
-    class Truck_02_base_F: LandVehicle {
+    class CBRN_Truck_02_base_F: LandVehicle {
         class Turrets {
             class MainTurret;
         };
     };
-    class Truck_02_MRL_base_F: Truck_02_base_F {};
+    class Truck_02_MRL_base_F: CBRN_Truck_02_base_F {};
     class I_Truck_02_MRL_F: Truck_02_MRL_base_F {};
 
     class CBRN_I_Truck_02_MRL_F: I_Truck_02_MRL_F {

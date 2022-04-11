@@ -15,8 +15,8 @@ class cfgAmmo
 		CBRN_gasType = 2;
 	};
 
-	class Sh_155mm_AMOS;
-	class Sh_155mm_AMOS_Chem_Sarin: Sh_155mm_AMOS
+	//class Smoke_82mm_AMOS_White;
+	class Sh_155mm_AMOS_Chem_Sarin: Smoke_82mm_AMOS_White
 	{
 		aiAmmoUsageFlags = "64";
 		CraterEffects = "";
