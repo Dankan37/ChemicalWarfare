@@ -2,6 +2,8 @@
 /*
 	gas = [radius, time, decay, timeToSpread, windAffected, ID, minimumProtection];
 */
+CBRN_allowUnconcious = true;
+CBRN_allowSkillChange = true;
 
 //Sarin - lethal 
 gasSarin = [250, 1800, 2, 60, true,0, 2];

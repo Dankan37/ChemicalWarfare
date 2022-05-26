@@ -24,6 +24,7 @@ if(isNull _logicObject) then {
 	_logicCenter = createCenter sideLogic;
 	_logicGroup = createGroup _logicCenter;
 	_logicObject = _logicGroup createUnit ["Logic", [0,0,0], [], 0, "NONE"];
+	_logicObject setPos _position;
 };
 
 //Safety checks
@@ -61,11 +62,15 @@ while {_timeMax > time} do {
 	_inverseMag = (1/(_windMag+0.1) min 1); //Cheeky way to prevent 1/0
 
 	//main loop
-	_units = _position nearEntities [["Man", "StaticWeapon"], _dinamicRadius];
+	_units = _logicObject nearEntities [["Man", "StaticWeapon"], _dinamicRadius];
 	{
 		//Was the unit set immune?
 		_immune = (_x getVariable ["immune", false]);
 		if (_immune) then {continue;};
+
+		//Unit doesn't have an handler
+		_hasHandler = (_x getVariable ["hasHandler", false]);
+		if(!_hasHandler) then {continue;};
 
 		//Is this a turret?
 		_isWeapon = typeof _x isKindOf "StaticWeapon";
@@ -79,7 +84,8 @@ while {_timeMax > time} do {
 			_protection = [_x] call CBRN_fnc_getProtectionLevel;
 			_increment = 0;
 
-			_distance 	= _position distance2D _x;
+
+			_distance 	= _logicObject distance2D _x;
 			_unProtected = (_protection < _minProtection);
 
 			//If there is wind and it's enabled we calculate it's effects

@@ -6,3 +6,5 @@ call CBRN_fnc_manageEventHandlers;
 
 //manage the custom uniforms and masks
 [CBRN_uniformArray, CBRN_maskArray] call CBRN_fnc_setupUniforms;
+
+

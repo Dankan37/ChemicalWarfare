@@ -5,7 +5,8 @@
 _unit 			= param[0];
 _exposureArray 	= param[1];
 _incrementArray	= param[2];
-_decayArray		= param[3]; 			
+_decayArray		= param[3]; 	
+_aceDetected 	= param[4, false];		
 
 //Sum of all effects used for skill deduction
 _sum = 0;
@@ -26,16 +27,31 @@ for "_i" from 0 to 2 do {
 	};
 
 	//Manage the gas effects for each of the gas types
-	[_unit, _selExposure, _selIncrement, _i] call CBRN_fnc_manageGasEffects;
+	[_unit, _selExposure, _selIncrement, _i, _aceDetected] call CBRN_fnc_manageGasEffects;
 
 	//Save the sum
 	_sum = (_sum + _selExposure);
+	//systemChat str _sum;
 };
 
 //Manage AI Skill - todo add check
-private _fixedSkill 	= (_unit getVariable "baseSkilLevel");
-_unit setSkill selectMax[0, (_fixedSkill - _sum/100)];
+if(CBRN_allowSkillChange and {_unit getVariable ["allowSkill", false];}) then {
+	private _skill = skill _unit;
+	private _lastSkill = (_unit getVariable ["lastSkill", _skill]);
+	
+	//Check if the skill has changed radically (by human, zeus)
+	if(abs(_lastSkill - _skill) > 0.2) then {
+		//In this case we update it to the new value to prevent it being constantly overwritten
+		_unit setVariable ["baseSkilLevel", _skill];
+	};
 
+	private _fixedSkill = (_unit getVariable ["baseSkilLevel", _skill]);
+	private _newSkill = (_fixedSkill - _sum/100);
+	if(_newSkill > 0) then {
+		_unit setSkill _newSkill;
+	};
+	_unit setVariable ["lastSkill", _fixedSkill];
+};
 
 //Stuff for players
 if(isPlayer _unit and hasInterface) then {
